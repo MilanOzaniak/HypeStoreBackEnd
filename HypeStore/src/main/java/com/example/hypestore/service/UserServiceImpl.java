@@ -4,9 +4,7 @@ import com.example.hypestore.model.Item;
 import com.example.hypestore.model.User;
 import com.example.hypestore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +14,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
-
 
     @Override
     public List<User> getAllUsers() {

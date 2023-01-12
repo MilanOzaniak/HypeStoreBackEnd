@@ -1,8 +1,6 @@
 package com.example.hypestore.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -15,33 +13,12 @@ public class Item {
     private String description;
     private String size;
     private String price;
+    private String category;
     private User user;
     private String userName;
     private LocalDate date;
-
-    //asdasd
     private String imageName;
-
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
-
-    @Transient
-    private MultipartFile image;
-
-    public MultipartFile setFile() {
-        return image;
-    }
-
-    public void setImage(MultipartFile image) {
-        this.image = image;
-    }
-
-    //asdasd
+    private String imagePath;
 
     @Access(AccessType.PROPERTY)
     @ManyToOne
@@ -94,6 +71,14 @@ public class Item {
         this.price = price;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -108,5 +93,21 @@ public class Item {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

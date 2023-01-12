@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ItemService {
-    Item createItem(Item item, MultipartFile file) throws IOException;
+    Item createItem(Item item);
+    void uploadItem(MultipartFile file) throws IOException;
     List<Item> getAllItems();
     void deleteItemById(int id);
+    List<Item> getAllShoes();
+    List<Item> getAllClothing();
+    List<Item> getAllAccessories();
 }

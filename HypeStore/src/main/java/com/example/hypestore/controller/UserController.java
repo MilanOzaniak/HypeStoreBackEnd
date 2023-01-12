@@ -2,10 +2,8 @@ package com.example.hypestore.controller;
 
 import com.example.hypestore.model.Item;
 import com.example.hypestore.model.User;
-import com.example.hypestore.service.ItemService;
 import com.example.hypestore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
