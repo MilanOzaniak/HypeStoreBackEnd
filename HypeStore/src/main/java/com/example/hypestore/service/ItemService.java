@@ -5,6 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 public interface ItemService {
     Item createItem(Item item);
@@ -14,4 +15,5 @@ public interface ItemService {
     List<Item> getAllShoes();
     List<Item> getAllClothing();
     List<Item> getAllAccessories();
+    Optional<Item> getCurrentItem(int id);
 }

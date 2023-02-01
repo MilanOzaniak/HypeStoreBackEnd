@@ -3,6 +3,7 @@ package com.example.hypestore.service;
 import com.example.hypestore.model.Item;
 import com.example.hypestore.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -42,30 +44,37 @@ public class ItemServiceImpl implements ItemService {
         item.setUser(userService.getCurrentUser());
         item.setUserName(userService.getCurrentUser().getUserName());
         item.setDate(LocalDate.now());
-        item.setImagePath("C:\\Users\\Milan\\Desktop\\HypeStore\\files\\images\\" + fileName);
+        item.setImagePath("http://localhost:8080/item/getImage/" + fileName);
+        item.setImageName(fileName);
         return itemRepository.save(item);
+    }
+
+    @Override
+    public Optional<Item> getCurrentItem(int id){
+        return itemRepository.findById(id);
     }
 
     //filter
     @Override
     public List<Item> getAllItems() {
-        return itemRepository.findAll();
+        return itemRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     @Override
     public List<Item> getAllShoes() {
-        return itemRepository.findByCategoryEquals("Shoes");
+        return itemRepository.findByCategoryEqualsOrderByIdDesc("Shoes");
     }
 
     @Override
     public List<Item> getAllClothing() {
-        return itemRepository.findByCategoryEquals("Clothing");
+        return itemRepository.findByCategoryEqualsOrderByIdDesc("Clothing");
     }
 
     @Override
     public List<Item> getAllAccessories() {
-        return itemRepository.findByCategoryEquals("Accessories");
+        return itemRepository.findByCategoryEqualsOrderByIdDesc("Accessories");
     }
+
     //
 
     @Override

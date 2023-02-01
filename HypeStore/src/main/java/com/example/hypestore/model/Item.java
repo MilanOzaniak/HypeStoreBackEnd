@@ -23,7 +23,6 @@ public class Item {
     @Access(AccessType.PROPERTY)
     @ManyToOne
     @JsonIgnore
-
     public User getUser() {
         return user;
     }

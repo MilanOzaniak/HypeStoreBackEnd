@@ -27,6 +27,7 @@ public class AuthController {
     @Autowired
     private MyUserDetailService myUserDetailService;
 
+
     @PostMapping(value = "/auth")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
