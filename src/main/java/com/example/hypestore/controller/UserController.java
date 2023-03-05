@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin("http://hypestorebackend-production.up.railway.app")
+@CrossOrigin("http://localhost:3000")
 public class UserController {
 
     @Autowired
