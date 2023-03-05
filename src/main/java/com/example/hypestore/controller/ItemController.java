@@ -19,7 +19,7 @@ import org.springframework.http.ResponseEntity;
 
 @RequestMapping("/item")
 @RestController
-@CrossOrigin
+@CrossOrigin("http://hypestorebackend-production.up.railway.app")
 public class ItemController {
 
     @Autowired

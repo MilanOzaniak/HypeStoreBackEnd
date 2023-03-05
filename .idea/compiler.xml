@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hypestore – kópia" />
-        <module name="hypestore" />
         <module name="backend" />
+        <module name="hypestore" />
         <module name="HypeStore" />
       </profile>
     </annotationProcessing>

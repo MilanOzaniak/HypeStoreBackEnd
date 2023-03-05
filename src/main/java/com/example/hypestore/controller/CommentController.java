@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/comment")
 @RestController
-@CrossOrigin
+@CrossOrigin("http://hypestorebackend-production.up.railway.app")
 public class CommentController {
 
     @Autowired

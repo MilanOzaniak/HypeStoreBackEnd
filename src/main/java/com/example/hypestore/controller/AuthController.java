@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://hypestorebackend-production.up.railway.app")
 public class AuthController {
 
     @Autowired
