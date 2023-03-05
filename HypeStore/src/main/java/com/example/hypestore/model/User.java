@@ -13,6 +13,7 @@ public class User {
     private String email;
     private String pnumber;
     private String description;
+    private String location;
     private boolean active = true;
     private String roles;
     private boolean accountVerified;
@@ -66,6 +67,14 @@ public class User {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public boolean isActive() {
