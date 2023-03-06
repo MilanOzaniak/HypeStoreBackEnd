@@ -14,7 +14,7 @@ public class User {
     private String email;
     private String pnumber;
     private String description;
-    private boolean active = true;
+    private boolean isActive;
     private String roles;
     private double rating;
     private String profileImage;
@@ -81,8 +81,12 @@ public class User {
         this.description = description;
     }
 
-    public boolean isActive() {
-        return active;
+    public boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(boolean active) {
+        this.isActive = active;
     }
 
     public String getRoles() {
