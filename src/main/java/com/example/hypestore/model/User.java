@@ -81,8 +81,12 @@ public class User {
         this.description = description;
     }
 
-    public boolean getActive() {
+    public boolean isActive() {
         return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getRoles() {
