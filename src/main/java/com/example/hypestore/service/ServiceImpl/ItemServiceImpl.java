@@ -138,6 +138,22 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public List<Item> getByPriceDesc(){
+        return itemRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
+    }
+
+    @Override
+    public List<Item> getByPriceAsc(){
+        return itemRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
+    }
+
+    @Override
+    public List<Item> getBySize(String size){
+        return itemRepository.findBySizeEqualsOrderByIdDesc(size);
+    }
+    //
+
+    @Override
     public void deleteItemById(int id) throws Exception {
         Item item = itemRepository.findById(id).get();
         for(int i = 0; i < item.getImageNames().size(); i++){

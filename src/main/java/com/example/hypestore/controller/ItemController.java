@@ -19,7 +19,8 @@ import org.springframework.http.ResponseEntity;
 
 @RequestMapping("/item")
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "https://milanozaniak.github.io/")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class ItemController {
 
     @Autowired
@@ -58,8 +59,8 @@ public class ItemController {
         return itemService.getCurrentItem(id);
     }
 
-    @GetMapping("/del/{id}")
-    public void deleteItem(@PathVariable Integer id) throws Exception {
+    @PostMapping("/del")
+    public void deleteItem(@RequestParam("id") Integer id) throws Exception {
         itemService.deleteItemById(id);
     }
 
@@ -70,24 +71,43 @@ public class ItemController {
 
 
     //filter
+
+    //all
     @GetMapping("/getAll")
     public List<Item> listOfItems(){
         return itemService.getAllItems();
     }
-
+    //shoes
     @GetMapping("/getAllShoes")
     public List<Item> getAllShoes(){
         return itemService.getAllShoes();
     }
-
+    //clothing
     @GetMapping("/getAllClothing")
     public List<Item> getAllClothing(){
         return itemService.getAllClothing();
     }
-
+    //accessories
     @GetMapping("/getAllAccessories")
     public List<Item> getAllAccessories(){
         return itemService.getAllAccessories();
     }
+
+    @GetMapping("/getByPriceDesc")
+    public List<Item> getByPriceDesc(){
+        return itemService.getByPriceDesc();
+    }
+
+    @GetMapping("/getByPriceAsc")
+    public List<Item> getByPriceAsc(){
+        return itemService.getByPriceAsc();
+    }
+
+    @GetMapping("/getBySize/{size}")
+    public List<Item> getBySize(@PathVariable String size){
+        return itemService.getBySize(size);
+    }
+
+
     //
 }

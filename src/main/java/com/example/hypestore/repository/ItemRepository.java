@@ -11,5 +11,6 @@ import java.util.Optional;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Integer> {
     List<Item> findByCategoryEqualsOrderByIdDesc(String category);
+    List<Item> findBySizeEqualsOrderByIdDesc(String size);
     Optional<Item> findById(int id);
 }
