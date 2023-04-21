@@ -16,11 +16,16 @@ public interface ItemService {
     ResponseEntity<String> uploadFiles(MultipartFile[] files);
     byte[] getFile(String filename) throws Exception;
     byte[] getAllFiles(int id) throws Exception;
-    List<Item> getAllItems();
     void deleteItemById(int id) throws Exception;
+    Optional<Item> getCurrentItem(int id);
+    Item changeCurrentitem(ItemBasicInfo itemBasicInfo);
+
+    //filter
+    List<Item> getAllItems();
     List<Item> getAllShoes();
     List<Item> getAllClothing();
     List<Item> getAllAccessories();
-    Optional<Item> getCurrentItem(int id);
-    Item changeCurrentitem(ItemBasicInfo itemBasicInfo);
+    List<Item> getByPriceDesc();
+    List<Item> getByPriceAsc();
+    List<Item> getBySize(String size);
 }
