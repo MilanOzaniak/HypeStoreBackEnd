@@ -14,7 +14,7 @@ public class Item {
     private String title;
     private String description;
     private String size;
-    private int price;
+    private String price;
     private String category;
     private User user;
     private String userName;
@@ -67,11 +67,11 @@ public class Item {
         this.size = size;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

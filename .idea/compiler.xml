@@ -11,14 +11,12 @@
         <module name="backend" />
         <module name="hypestore" />
         <module name="HypeStore" />
-        <module name="HypeStoreBackEnd" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="HypeStore" options="-parameters" />
-      <module name="HypeStoreBackEnd" options="-parameters" />
       <module name="backend" options="-parameters" />
       <module name="hypestore" options="-parameters" />
       <module name="hypestore – kópia" options="-parameters" />
