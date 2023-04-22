@@ -137,20 +137,107 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findByCategoryEqualsOrderByIdDesc("Accessories");
     }
 
+    //PRICE
     @Override
-    public List<Item> getByPriceDesc(){
-        return itemRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
+    public List<Item> getShoesByPriceDesc(){
+        return itemRepository.findByCategoryOrderByPriceDesc("Shoes");
     }
 
     @Override
-    public List<Item> getByPriceAsc(){
-        return itemRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
+    public List<Item> getShoesByPriceAsc(){
+        return itemRepository.findByCategoryOrderByPriceAsc("Shoes");
     }
 
     @Override
-    public List<Item> getBySize(String size){
-        return itemRepository.findBySizeEqualsOrderByIdDesc(size);
+    public List<Item> getClothingByPriceAsc(){
+        return itemRepository.findByCategoryOrderByPriceAsc("Clothing");
     }
+
+    @Override
+    public List<Item> getClothingByPriceDesc(){
+        return itemRepository.findByCategoryOrderByPriceDesc("Clothing");
+    }
+
+    @Override
+    public List<Item> getAccessoriesByPriceAsc(){
+        return itemRepository.findByCategoryOrderByPriceAsc("Accessories");
+    }
+
+
+    @Override
+    public List<Item> getAccessoriesByPriceDesc(){
+        return itemRepository.findByCategoryOrderByPriceDesc("Accessories");
+    }
+
+
+    //SIZE
+
+    @Override
+    public List<Item> getShoesBySize(String size){
+        return itemRepository.findByCategoryAndSizeOrderBySize("Shoes", size);
+    }
+
+    @Override
+    public List<Item> getClothingBySize(String size){
+        return itemRepository.findByCategoryAndSizeOrderBySize("Clothing", size);
+    }
+
+
+    @Override
+    public List<Item> getAccessoriesBySize(String size){
+        return itemRepository.findByCategoryAndSizeOrderBySize("Accessories", size);
+    }
+
+    //LOCATION
+
+
+    @Override
+    public List<Item> getShoesByLocation(String location){
+        return itemRepository.findByCategoryAndLocationOrderByLocation("Shoes", location);
+    }
+
+    @Override
+    public List<Item> getClothingByLocation(String location){
+        return itemRepository.findByCategoryAndLocationOrderByLocation("Clothing", location);
+    }
+
+    @Override
+    public List<Item> getAccessoriesByLocation(String location){
+        return itemRepository.findByCategoryAndLocationOrderByLocation("Accessories", location);
+    }
+
+    @Override
+    public List<Item> getShoesByGender(String gender){
+        return itemRepository.findByCategoryAndGenderOrderByGender("Shoes", gender);
+    }
+
+    @Override
+    public List<Item> getClothingByGender(String gender){
+        return itemRepository.findByCategoryAndGenderOrderByGender("Clothing", gender);
+    }
+
+    @Override
+    public List<Item> getAccessoriesByGender(String gender){
+        return itemRepository.findByCategoryAndGenderOrderByGender("Accessories", gender);
+    }
+
+
+    @Override
+    public List<Item> getOldestShoes() {
+        return itemRepository.findByCategoryEqualsOrderByIdAsc("Shoes");
+    }
+
+    @Override
+    public List<Item> getOldestClothing(){
+        return itemRepository.findByCategoryEqualsOrderByIdAsc("Clothing");
+    }
+
+    @Override
+    public List<Item> getOldestAccessories(){
+        return itemRepository.findByCategoryEqualsOrderByIdAsc("Accessories");
+    }
+
+
     //
 
     @Override

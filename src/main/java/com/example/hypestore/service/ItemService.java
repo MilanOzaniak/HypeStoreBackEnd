@@ -25,7 +25,22 @@ public interface ItemService {
     List<Item> getAllShoes();
     List<Item> getAllClothing();
     List<Item> getAllAccessories();
-    List<Item> getByPriceDesc();
-    List<Item> getByPriceAsc();
-    List<Item> getBySize(String size);
+    List<Item> getShoesByPriceDesc();
+    List<Item> getShoesByPriceAsc();
+    List<Item> getClothingByPriceAsc();
+    List<Item> getClothingByPriceDesc();
+    List<Item> getAccessoriesByPriceAsc();
+    List<Item> getAccessoriesByPriceDesc();
+    List<Item> getShoesBySize(String size);
+    List<Item> getClothingBySize(String size);
+    List<Item> getAccessoriesBySize(String size);
+    List<Item> getShoesByLocation(String location);
+    List<Item> getClothingByLocation(String location);
+    List<Item> getAccessoriesByLocation(String location);
+    List<Item> getShoesByGender(String gender);
+    List<Item> getClothingByGender(String gender);
+    List<Item> getAccessoriesByGender(String gender);
+    List<Item> getOldestShoes();
+    List<Item> getOldestClothing();
+    List<Item> getOldestAccessories();
 }
